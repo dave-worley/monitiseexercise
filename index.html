@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+  <style type="text/css">
+    .usercell {
+      text-align: right;
+      font-size: 80%;
+      font-weight: 900;
+    }
+    #chatbox {
+      margin-top: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      height: 200px;
+      position: relative;
+    }
+    #scrollbox {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 198px;
+    }
+    #scrollbox .row:nth-child(even) {
+      background-color: #ffc;
+    }
+    #message-input {
+      position: absolute;
+      bottom: -2em;
+      width: 100%;
+    }
+    #message-input input,
+    #message-input button {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div id="chatbox">
+        <div id="chatregion"></div>
+        <div id="message-input">
+          <div class="row">
+            <div class="col-md-10">
+              <input type="text" id="newmessage"/>
+            </div>
+            <div class="col-md-2">
+              <button id="sendmessage">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/template" id="chat-template">
+</script>
+<script type="text/template" id="message-template">
+  <div class="col-md-3 usercell"><%= username %>:</div>
+  <div class="col-md-9"><%= message %></div>
+</script>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/underscore.min.js"></script>
+<script src="js/backbone.js"></script>
+<script type="text/javascript" src="js/backbone.marionette.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
